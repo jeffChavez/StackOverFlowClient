@@ -15,4 +15,10 @@
 @property WebViewController *webViewController;
 @property WKWebView *webView;
 
+@property NSString *publicKey;
+@property NSString *oAuthDomain;
+@property NSString *clientID;
+@property NSString *oAuthURL;
+@property NSString *loginURL;
+
 @end

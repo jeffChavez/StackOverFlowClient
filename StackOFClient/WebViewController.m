@@ -11,12 +11,6 @@
 
 @interface WebViewController ()
 
-@property NSString *publicKey;
-@property NSString *oAuthDomain;
-@property NSString *clientID;
-@property NSString *oAuthURL;
-@property NSString *loginURL;
-
 @end
 
 @implementation WebViewController
@@ -31,6 +25,7 @@
     
     self.loginURL = [NSString stringWithFormat:@"%@?client_id=%@&redirect_uri=%@&scope=read_inbox", self.oAuthURL, self.clientID, self.oAuthDomain];
     self.webView = [[WKWebView alloc] init];
+    self.webView.navigationDelegate = self;
     self.webView.frame = self.view.frame;
     [self.view addSubview: self.webView];
     
@@ -39,7 +34,24 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
-    //do something
+    NSObject *request = navigationAction.request.URL.description;
+    NSString *urlString = (NSString *) request;
+    NSLog(@"%@",urlString);
+    
+    if ([urlString containsString:@"access_token"]) {
+        NSString *tokenFromURL = [urlString componentsSeparatedByString:@"&"].firstObject;
+        tokenFromURL = [tokenFromURL componentsSeparatedByString:@"="].lastObject;
+        NSLog(@"%@",tokenFromURL);
+        [[NSUserDefaults standardUserDefaults] setValue:tokenFromURL forKey:@"OAuthToken"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle: @"Authentication Complete" message: @"Your authentication was successful" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addAction:([UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }])];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
 @end

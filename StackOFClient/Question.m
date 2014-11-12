@@ -18,12 +18,16 @@
     self = [super init];
     
     if (self) {
-        self.title = (NSString *) questionDictionary[@"title"];
-        self.questionID = (NSInteger) questionDictionary[@"question_id"];
+        self.title = questionDictionary[@"title"];
+        self.questionID = [questionDictionary[@"question_id"] integerValue];
         self.link = (NSString *) questionDictionary[@"link"];
         self.answerCount = [questionDictionary[@"answer_count"] integerValue];
         self.viewCount = [(NSString *) questionDictionary[@"view_count"] integerValue];
         self.score = [(NSString *) questionDictionary[@"score"] integerValue];
+        self.timeSincePost = [questionDictionary[@"creation_date"] doubleValue];
+        self.owner = (NSDictionary *) questionDictionary[@"owner"];
+        self.profileImageURLString = (NSString *) self.owner[@"profile_image"];
+        self.username = (NSString *) self.owner[@"display_name"];
     }
     return self;
 }

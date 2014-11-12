@@ -22,6 +22,9 @@
 		6B7D94021A1193FB0023E42D /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D94011A1193FB0023E42D /* NetworkController.m */; };
 		6B7D94051A12CF730023E42D /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D94041A12CF730023E42D /* WebViewController.m */; };
 		6B7D94081A12E6070023E42D /* QuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D94071A12E6070023E42D /* QuestionDetailViewController.m */; };
+		6B7D940E1A132C740023E42D /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D940D1A132C740023E42D /* QuestionCell.m */; };
+		6B7D94101A132CDE0023E42D /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7D940F1A132CDE0023E42D /* QuestionCell.xib */; };
+		6B7D94491A13ED5B0023E42D /* Spanish.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B7D94481A13ED5B0023E42D /* Spanish.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,10 @@
 		6B7D94041A12CF730023E42D /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		6B7D94061A12E6070023E42D /* QuestionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetailViewController.h; sourceTree = "<group>"; };
 		6B7D94071A12E6070023E42D /* QuestionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailViewController.m; sourceTree = "<group>"; };
+		6B7D940C1A132C740023E42D /* QuestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionCell.h; sourceTree = "<group>"; };
+		6B7D940D1A132C740023E42D /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
+		6B7D940F1A132CDE0023E42D /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
+		6B7D94481A13ED5B0023E42D /* Spanish.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Spanish.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,11 +113,9 @@
 			children = (
 				6B7D93FA1A1190EB0023E42D /* Controller */,
 				6B7D93FB1A1191010023E42D /* Model */,
-				6B7D93F71A118FFD0023E42D /* Question.h */,
-				6B7D93F81A118FFD0023E42D /* Question.m */,
-				6B7D93FF1A1192E10023E42D /* User.h */,
-				6B7D93FC1A1192CC0023E42D /* User.m */,
+				6B7D94091A132BEF0023E42D /* View */,
 				6B7D93D51A1187D00023E42D /* Main.storyboard */,
+				6B7D94481A13ED5B0023E42D /* Spanish.strings */,
 				6B7D93D81A1187D00023E42D /* Images.xcassets */,
 				6B7D93DA1A1187D00023E42D /* LaunchScreen.xib */,
 				6B7D93CF1A1187D00023E42D /* StackOFClient.xcdatamodeld */,
@@ -150,10 +155,10 @@
 			children = (
 				6B7D93CC1A1187D00023E42D /* AppDelegate.h */,
 				6B7D93CD1A1187D00023E42D /* AppDelegate.m */,
-				6B7D93D21A1187D00023E42D /* MenuViewController.h */,
-				6B7D93D31A1187D00023E42D /* MenuViewController.m */,
 				6B7D93F11A11889D0023E42D /* SplitViewController.h */,
 				6B7D93F21A11889D0023E42D /* SplitViewController.m */,
+				6B7D93D21A1187D00023E42D /* MenuViewController.h */,
+				6B7D93D31A1187D00023E42D /* MenuViewController.m */,
 				6B7D93F41A118BED0023E42D /* QuestionSearchViewController.h */,
 				6B7D93F51A118BED0023E42D /* QuestionSearchViewController.m */,
 				6B7D94061A12E6070023E42D /* QuestionDetailViewController.h */,
@@ -169,8 +174,22 @@
 		6B7D93FB1A1191010023E42D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6B7D93F71A118FFD0023E42D /* Question.h */,
+				6B7D93F81A118FFD0023E42D /* Question.m */,
+				6B7D93FF1A1192E10023E42D /* User.h */,
+				6B7D93FC1A1192CC0023E42D /* User.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		6B7D94091A132BEF0023E42D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B7D940C1A132C740023E42D /* QuestionCell.h */,
+				6B7D940D1A132C740023E42D /* QuestionCell.m */,
+				6B7D940F1A132CDE0023E42D /* QuestionCell.xib */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B7D93D71A1187D00023E42D /* Main.storyboard in Resources */,
+				6B7D94491A13ED5B0023E42D /* Spanish.strings in Resources */,
+				6B7D94101A132CDE0023E42D /* QuestionCell.xib in Resources */,
 				6B7D93DC1A1187D00023E42D /* LaunchScreen.xib in Resources */,
 				6B7D93D91A1187D00023E42D /* Images.xcassets in Resources */,
 			);
@@ -278,6 +299,7 @@
 				6B7D93F61A118BED0023E42D /* QuestionSearchViewController.m in Sources */,
 				6B7D93CE1A1187D00023E42D /* AppDelegate.m in Sources */,
 				6B7D93D11A1187D00023E42D /* StackOFClient.xcdatamodeld in Sources */,
+				6B7D940E1A132C740023E42D /* QuestionCell.m in Sources */,
 				6B7D93F31A11889D0023E42D /* SplitViewController.m in Sources */,
 				6B7D94081A12E6070023E42D /* QuestionDetailViewController.m in Sources */,
 				6B7D93F91A118FFD0023E42D /* Question.m in Sources */,
