@@ -19,7 +19,7 @@
     
     if (self) {
         self.title = (NSString *) questionDictionary[@"title"];
-        self.questionID = (NSString *) questionDictionary[@"question_id"];
+        self.questionID = (NSInteger) questionDictionary[@"question_id"];
         self.link = (NSString *) questionDictionary[@"link"];
         self.answerCount = [questionDictionary[@"answer_count"] integerValue];
         self.viewCount = [(NSString *) questionDictionary[@"view_count"] integerValue];

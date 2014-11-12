@@ -9,6 +9,7 @@
 #import "QuestionSearchViewController.h"
 #import "NetworkController.h"
 #import "Question.h"
+#import "QuestionDetailViewController.h"
 
 @interface QuestionSearchViewController ()
 
@@ -36,6 +37,14 @@
     return self.questions.count;
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+    if ([segue.identifier  isEqual: @"SHOW_SELECTED_QUESTION"]) {
+        QuestionDetailViewController *destination = (QuestionDetailViewController *) segue.destinationViewController;
+        destination.selectedQuestion = self.questions[indexPath.row];
+    }
+}
+
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [[NetworkController networkController] searchForQuestionsWithTag:searchBar.text withCompletionHandler:^(NSString *errorDescription, NSMutableArray *questions) {
         if (!errorDescription) {
@@ -46,4 +55,5 @@
         }
     }];
 }
+
 @end

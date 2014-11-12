@@ -7,8 +7,11 @@
 //
 
 #import "MenuViewController.h"
+#import "WebViewController.h"
 
 @interface MenuViewController ()
+
+@property UIBarButtonItem *loginButton;
 
 @end
 
@@ -16,12 +19,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.loginButton = [[UIBarButtonItem alloc] initWithTitle:@"Login" style: UIBarButtonItemStylePlain target: self action: @selector(beginLogin:)];
+    self.navigationItem.rightBarButtonItem = self.loginButton;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) beginLogin: (id) sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"WEB_VC"];
+    [self.navigationController pushViewController:webViewController animated:true];
 }
 
 @end

@@ -20,6 +20,8 @@
 		6B7D93F91A118FFD0023E42D /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D93F81A118FFD0023E42D /* Question.m */; };
 		6B7D93FD1A1192CC0023E42D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D93FC1A1192CC0023E42D /* User.m */; };
 		6B7D94021A1193FB0023E42D /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D94011A1193FB0023E42D /* NetworkController.m */; };
+		6B7D94051A12CF730023E42D /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D94041A12CF730023E42D /* WebViewController.m */; };
+		6B7D94081A12E6070023E42D /* QuestionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D94071A12E6070023E42D /* QuestionDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,10 @@
 		6B7D93FF1A1192E10023E42D /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		6B7D94001A1193FB0023E42D /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
 		6B7D94011A1193FB0023E42D /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
+		6B7D94031A12CF730023E42D /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		6B7D94041A12CF730023E42D /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		6B7D94061A12E6070023E42D /* QuestionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionDetailViewController.h; sourceTree = "<group>"; };
+		6B7D94071A12E6070023E42D /* QuestionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +156,10 @@
 				6B7D93F21A11889D0023E42D /* SplitViewController.m */,
 				6B7D93F41A118BED0023E42D /* QuestionSearchViewController.h */,
 				6B7D93F51A118BED0023E42D /* QuestionSearchViewController.m */,
+				6B7D94061A12E6070023E42D /* QuestionDetailViewController.h */,
+				6B7D94071A12E6070023E42D /* QuestionDetailViewController.m */,
+				6B7D94031A12CF730023E42D /* WebViewController.h */,
+				6B7D94041A12CF730023E42D /* WebViewController.m */,
 				6B7D94001A1193FB0023E42D /* NetworkController.h */,
 				6B7D94011A1193FB0023E42D /* NetworkController.m */,
 			);
@@ -264,10 +274,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B7D93FD1A1192CC0023E42D /* User.m in Sources */,
+				6B7D94051A12CF730023E42D /* WebViewController.m in Sources */,
 				6B7D93F61A118BED0023E42D /* QuestionSearchViewController.m in Sources */,
 				6B7D93CE1A1187D00023E42D /* AppDelegate.m in Sources */,
 				6B7D93D11A1187D00023E42D /* StackOFClient.xcdatamodeld in Sources */,
 				6B7D93F31A11889D0023E42D /* SplitViewController.m in Sources */,
+				6B7D94081A12E6070023E42D /* QuestionDetailViewController.m in Sources */,
 				6B7D93F91A118FFD0023E42D /* Question.m in Sources */,
 				6B7D93D41A1187D00023E42D /* MenuViewController.m in Sources */,
 				6B7D94021A1193FB0023E42D /* NetworkController.m in Sources */,

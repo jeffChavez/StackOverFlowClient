@@ -28,7 +28,7 @@
 
 - (void) searchForQuestionsWithTag: (NSString *) tag withCompletionHandler: (void (^)(NSString *, NSMutableArray *))completionHandler; {
     NSString *requestURLString = [NSString stringWithFormat:@"https://api.stackexchange.com/2.2/search?order=desc&sort=activity&tagged=%@&site=stackoverflow", tag];
-    NSURL *requestURL = [[NSURL alloc] initWithString: requestURLString];
+    NSURL *requestURL = [NSURL URLWithString:requestURLString];
     NSURLSessionDataTask *dataTask = [[NSURLSession sharedSession] dataTaskWithURL: requestURL completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if ( [response isKindOfClass:[NSHTTPURLResponse class]] ) {
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;

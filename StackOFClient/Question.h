@@ -12,7 +12,7 @@
 
 @property NSString *title;
 @property NSString *link;
-@property NSString *questionID;
+@property NSInteger questionID;
 @property NSInteger viewCount;
 @property NSInteger answerCount;
 @property NSInteger score;

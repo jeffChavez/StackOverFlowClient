@@ -85,6 +85,24 @@
             </objects>
             <point key="canvasLocation" x="909" y="-357"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="bcJ-ar-CW9">
+            <objects>
+                <viewController storyboardIdentifier="WEB_VC" id="N7r-aS-t2H" customClass="WebViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mz7-jQ-2mf"/>
+                        <viewControllerLayoutGuide type="bottom" id="kW2-Ht-pN2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1uv-if-EQW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ym-Vv-g8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909" y="335"/>
+        </scene>
         <!--Question Search View Controller-->
         <scene sceneID="VJ0-OD-jbp">
             <objects>
@@ -112,6 +130,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="95h-DR-lsx" id="4Wp-fB-2iV">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1so-bo-FoE" kind="showDetail" identifier="SHOW_SELECTED_QUESTION" id="Mfw-eG-CAE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -132,6 +153,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6R1-X1-n3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1677" y="-677"/>
+        </scene>
+        <!--Question Detail View Controller-->
+        <scene sceneID="c7b-3v-ZGe">
+            <objects>
+                <viewController id="1so-bo-FoE" customClass="QuestionDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="St5-uw-VCs"/>
+                        <viewControllerLayoutGuide type="bottom" id="hgo-C9-Q0r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7KL-U9-jLd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HBV-Gw-Yxn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2365" y="-677"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xbH-re-fIK">
