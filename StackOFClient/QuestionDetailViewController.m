@@ -21,7 +21,7 @@
     self.webView = [[WKWebView alloc] init];
     self.webView.frame = self.view.frame;
     [self.view addSubview: self.webView];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.selectedQuestion.link]] ];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.selectedQuestion.link]]];
 }
 
 @end

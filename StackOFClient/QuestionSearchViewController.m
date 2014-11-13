@@ -47,8 +47,21 @@
     
     cell.titleLabel.text = question.title;
     cell.usernameLabel.text = question.username;
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:question.timeSincePost];
-    cell.timeLabel.text = [self.dateFormatter stringFromDate:date];
+    NSDate *currentDate = [NSDate date];
+    NSTimeInterval timeElapsedInSeconds = [currentDate timeIntervalSinceDate:[NSDate dateWithTimeIntervalSince1970:question.timeSincePost]];
+    NSLog(@"%f", timeElapsedInSeconds);
+    if (timeElapsedInSeconds > 60 && timeElapsedInSeconds < 60 * 60) {
+        NSTimeInterval timeInMinutes = timeElapsedInSeconds / 60;
+        cell.timeLabel.text = [NSString stringWithFormat:@"%.0f minutes ago", timeInMinutes];
+    } else if (timeElapsedInSeconds > 60 * 60 && timeElapsedInSeconds < 60 * 60 * 24){
+        NSTimeInterval timeInHours = timeElapsedInSeconds / 60 / 60;
+        cell.timeLabel.text = [NSString stringWithFormat:@"%.0f hours ago", timeInHours];
+    } else if (timeElapsedInSeconds > 60 * 60 * 24) {
+        NSTimeInterval timeInDays = timeElapsedInSeconds / 60 / 60 / 24;
+        cell.timeLabel.text = [NSString stringWithFormat:@"%.0f days ago", timeInDays];
+    } else {
+        cell.timeLabel.text = [NSString stringWithFormat:@"%.0f seconds ago",timeElapsedInSeconds];
+    }
     
     if (question.profileImage) {
         cell.profileImageView.image = question.profileImage;
