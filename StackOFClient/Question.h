@@ -24,5 +24,6 @@
 
 - (instancetype) initWithDictionary: (NSDictionary *) itemDictionary;
 
+- (NSMutableArray *) parseJSONDataIntoQuestions: (NSData *) data;
 
 @end

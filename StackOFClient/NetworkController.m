@@ -9,6 +9,7 @@
 #import "NetworkController.h"
 #import "Question.h"
 #import "WebViewController.h"
+#import "Question.h"
 
 @interface NetworkController ()
 
@@ -43,14 +44,7 @@
         if ( [response isKindOfClass:[NSHTTPURLResponse class]] ) {
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
             if ([httpResponse statusCode] >= 200 && [httpResponse statusCode] <= 204) {
-                NSError *error = nil;
-                NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-                NSMutableArray *itemArray = jsonDictionary[@"items"];
-                NSMutableArray *questions = [[NSMutableArray alloc] init];
-                for (NSDictionary *item in itemArray) {
-                    Question *newQuestion = [[Question alloc] initWithDictionary:item];
-                    [questions addObject:newQuestion];
-                }
+                NSMutableArray *questions = [[Question alloc] parseJSONDataIntoQuestions:data];
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                     completionHandler(nil, questions);
                 }];

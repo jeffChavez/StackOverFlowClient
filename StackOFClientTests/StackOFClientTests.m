@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "NetworkController.h"
 
 @interface StackOFClientTests : XCTestCase
 
@@ -28,6 +29,14 @@
 - (void)testExample {
     // This is an example of a functional test case.
     XCTAssert(YES, @"Pass");
+}
+
+- (void) testJSONParsing {
+    //check if json isnt nill, run parse, check if count is equal to sample json, check if a property in the first object in that array is equal to the sample json
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"json"];
+    NSData *jsonData = [NSData dataWithContentsOfFile:path];
+    NSMutableArray *sampleArray = [[Question alloc] parseJSONDataIntoQuestions:jsonData];
+    XCTAssertEqual(sampleArray.count, 10);
 }
 
 - (void)testPerformanceExample {
