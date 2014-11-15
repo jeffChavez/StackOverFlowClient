@@ -14,5 +14,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *usernameLabel;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *timeLabel;
+@property (nonatomic, weak) IBOutlet UILabel *answerCountLabel;
+@property (nonatomic, weak) IBOutlet UILabel *scoreLabel;
 
 @end

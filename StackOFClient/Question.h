@@ -12,15 +12,14 @@
 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *link;
-@property NSInteger questionID;
-@property NSInteger viewCount;
-@property NSInteger answerCount;
-@property NSInteger score;
-@property (nonatomic, strong) NSDictionary *owner;
+@property (nonatomic, assign) NSInteger questionID;
+@property (nonatomic, assign) NSInteger viewCount;
+@property (nonatomic, assign) NSInteger answerCount;
+@property (nonatomic, assign) NSInteger score;
 @property (nonatomic, strong) NSString *profileImageURLString;
 @property (nonatomic, strong) UIImage *profileImage;
 @property (nonatomic, strong) NSString *username;
-@property NSTimeInterval timeSincePost;
+@property (nonatomic, assign) NSTimeInterval timeSincePost;
 
 - (instancetype) initWithDictionary: (NSDictionary *) itemDictionary;
 

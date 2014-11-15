@@ -11,6 +11,7 @@
 #import "Question.h"
 #import "QuestionDetailViewController.h"
 #import "QuestionCell.h"
+#import <NSString+HTML.h>
 
 @interface QuestionSearchViewController ()
 
@@ -44,25 +45,50 @@
    QuestionCell *cell = [tableView dequeueReusableCellWithIdentifier:@"QUESTION_CELL" forIndexPath:indexPath];
     cell.profileImageView.image = nil;
     Question *question = self.questions[indexPath.row];
-    
-    cell.titleLabel.text = question.title;
+    cell.answerCountLabel.text = [NSString stringWithFormat:@"%ld views", (long)question.viewCount];
+    if ([cell.answerCountLabel.text  isEqual: @"1 views"]) {
+        cell.answerCountLabel.text = @"1 view";
+    }
+    cell.scoreLabel.text = [NSString stringWithFormat:@"%ld answers", (long)question.answerCount];
+    if ([cell.answerCountLabel.text  isEqual: @"1 answers"]) {
+        cell.answerCountLabel.text = @"1 answer";
+    }
+    cell.titleLabel.text = [question.title kv_decodeHTMLCharacterEntities];
     cell.usernameLabel.text = question.username;
     NSDate *currentDate = [NSDate date];
     NSTimeInterval timeElapsedInSeconds = [currentDate timeIntervalSinceDate:[NSDate dateWithTimeIntervalSince1970:question.timeSincePost]];
     NSLog(@"%f", timeElapsedInSeconds);
-    if (timeElapsedInSeconds > 60 && timeElapsedInSeconds < 60 * 60) {
+    if (timeElapsedInSeconds >= 120 && timeElapsedInSeconds < 60 * 60) {
         NSTimeInterval timeInMinutes = timeElapsedInSeconds / 60;
         cell.timeLabel.text = [NSString stringWithFormat:@"%.0f minutes ago", timeInMinutes];
-    } else if (timeElapsedInSeconds > 60 * 60 && timeElapsedInSeconds < 60 * 60 * 24){
+    } else if (timeElapsedInSeconds >= 60 * 60 && timeElapsedInSeconds < 60 * 60 * 24) {
         NSTimeInterval timeInHours = timeElapsedInSeconds / 60 / 60;
         cell.timeLabel.text = [NSString stringWithFormat:@"%.0f hours ago", timeInHours];
-    } else if (timeElapsedInSeconds > 60 * 60 * 24) {
+        if ([cell.timeLabel.text isEqual: @"1 hours ago"]) {
+            cell.timeLabel.text = @"1 hour ago";
+        }
+    } else if (timeElapsedInSeconds >= 60 * 60 * 24 && timeElapsedInSeconds < 60 * 60 * 24 * 30) {
         NSTimeInterval timeInDays = timeElapsedInSeconds / 60 / 60 / 24;
         cell.timeLabel.text = [NSString stringWithFormat:@"%.0f days ago", timeInDays];
+        if ([cell.timeLabel.text isEqual: @"1 days ago"]) {
+            cell.timeLabel.text = @"1 day ago";
+        }
+    } else if (timeElapsedInSeconds >= 60 * 60 * 24 * 30 && timeElapsedInSeconds < 60 * 60 * 24 * 30 * 12) {
+        NSTimeInterval timeInMonths = timeElapsedInSeconds / 60 / 60 / 24 / 30;
+        cell.timeLabel.text = [NSString stringWithFormat:@"%.0f months ago", timeInMonths];
+        if ([cell.timeLabel.text isEqual: @"1 months ago"]) {
+            cell.timeLabel.text = @"1 month ago";
+        }
+    } else if (timeElapsedInSeconds >= 60 * 60 * 24 * 30 * 12) {
+        NSTimeInterval timeInYears = timeElapsedInSeconds / 60 / 60 / 24 / 30 / 12;
+        cell.timeLabel.text = [NSString stringWithFormat:@"%.0f years ago", timeInYears];
+        if ([cell.timeLabel.text isEqual: @"1 years ago"]) {
+            cell.timeLabel.text = @"1 year ago";
+        }
     } else {
-        cell.timeLabel.text = [NSString stringWithFormat:@"%.0f seconds ago",timeElapsedInSeconds];
+        cell.timeLabel.text = @"just now";
     }
-    
+
     if (question.profileImage) {
         cell.profileImageView.image = question.profileImage;
     } else {

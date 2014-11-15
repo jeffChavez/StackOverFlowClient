@@ -14,6 +14,6 @@
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet UISearchBar *searchBar;
 
-@property NSMutableArray *questions;
+@property (nonatomic, strong) NSMutableArray *questions;
 
 @end
