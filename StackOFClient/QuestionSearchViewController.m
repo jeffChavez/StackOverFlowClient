@@ -53,9 +53,9 @@
     if ([cell.answerCountLabel.text  isEqual: @"1 views"]) {
         cell.answerCountLabel.text = @"1 view";
     }
-    cell.scoreLabel.text = [NSString stringWithFormat:@"%ld answers", (long)question.answerCount];
-    if ([cell.answerCountLabel.text  isEqual: @"1 answers"]) {
-        cell.answerCountLabel.text = @"1 answer";
+    cell.scoreLabel.text = [NSString stringWithFormat:@"%ld answers  |", (long)question.answerCount];
+    if ([cell.answerCountLabel.text  isEqual: @"1 answers  |"]) {
+        cell.answerCountLabel.text = @"1 answer  |";
     }
     cell.titleLabel.text = [question.title kv_decodeHTMLCharacterEntities];
     cell.usernameLabel.text = question.username;
