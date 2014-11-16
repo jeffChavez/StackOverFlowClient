@@ -36,8 +36,12 @@
     [self.dateFormatter setDateFormat:@"dd-MM-yy 'at' hh:mm a"];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
     [self.tableView reloadData];
 }
 

@@ -42,3 +42,19 @@
 }
 
 @end
+
+@interface AuthenticatedUser : User
+
+@end
+
+@implementation AuthenticatedUser
+
+- (instancetype) initWithDictionary:(NSDictionary *)authenticatedUserDictionary {
+    self = [super init];
+    
+    if (self) {
+        
+    }
+    return self;
+}
+@end
