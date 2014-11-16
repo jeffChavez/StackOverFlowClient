@@ -1,0 +1,9 @@
+
+/* Class = "IBUILabel"; text = "Questions"; ObjectID = "2DE-2D-hO1"; */
+"2DE-2D-hO1.text" = "Questions";
+
+/* Class = "IBUINavigationItem"; title = "Root View Controller"; ObjectID = "Tpq-X6-Xv7"; */
+"Tpq-X6-Xv7.title" = "Root View Controller";
+
+/* Class = "IBUISearchBar"; placeholder = "Search for a question"; ObjectID = "bva-mv-N9D"; */
+"bva-mv-N9D.placeholder" = "Search for a question";

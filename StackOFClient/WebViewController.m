@@ -8,6 +8,7 @@
 
 #import "WebViewController.h"
 #import <WebKit/WebKit.h>
+#import "Constants.h"
 
 @interface WebViewController ()
 
@@ -18,12 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.publicKey = @"5BOPJeGPNvUXXkWleXOlow((";
-    self.oAuthDomain = @"https://stackexchange.com/oauth/login_success";
-    self.clientID = @"3830";
-    self.oAuthURL = @"https://stackexchange.com/oauth/dialog";
+    self.loginURL = [NSString stringWithFormat:@"https://stackexchange.com/oauth/dialog?client_id=%@&redirect_uri=https://stackexchange.com/oauth/login_success&scope=read_inbox", clientID];
     
-    self.loginURL = [NSString stringWithFormat:@"%@?client_id=%@&redirect_uri=%@&scope=read_inbox", self.oAuthURL, self.clientID, self.oAuthDomain];
     self.webView = [[WKWebView alloc] init];
     self.webView.navigationDelegate = self;
     self.webView.frame = self.view.frame;

@@ -21,7 +21,7 @@
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, assign) NSTimeInterval timeSincePost;
 
-- (instancetype) initWithDictionary: (NSDictionary *) itemDictionary;
+- (instancetype) initWithDictionary: (NSDictionary *) questionDictionary;
 
 - (NSMutableArray *) parseJSONDataIntoQuestions: (NSData *) data;
 

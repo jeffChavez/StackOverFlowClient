@@ -19,11 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.loginButton = [[UIBarButtonItem alloc] initWithTitle:@"Login" style: UIBarButtonItemStylePlain target: self action: @selector(beginLogin:)];
     self.navigationItem.rightBarButtonItem = self.loginButton;
     
-    self.title = @"Search";
+    self.title = NSLocalizedString(@"Hello", nil);
 }
 
 - (void)didReceiveMemoryWarning {

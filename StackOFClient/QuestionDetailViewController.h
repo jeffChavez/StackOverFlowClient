@@ -13,7 +13,6 @@
 @interface QuestionDetailViewController : UIViewController <WKNavigationDelegate>
 
 @property QuestionDetailViewController *QuestionDetailViewController;
-@property WKWebView *webView;
 @property Question *selectedQuestion;
 
 @end

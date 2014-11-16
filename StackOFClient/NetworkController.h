@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Question.h"
+#import "User.h"
 
 @interface NetworkController : NSObject
 
@@ -15,6 +16,9 @@
 + (id)networkController;
 
 - (void) searchForQuestionsWithTag: (NSString *) tag withCompletionHandler: (void (^)(NSString *, NSMutableArray *))completionHandler;
+- (void) searchForUsersByName: (NSString *) name withCompletionHandler: (void (^)(NSString *, NSMutableArray*)) completionHandler;
+
 - (void) downloadImageFromQuestionSearch: (Question *) question withCompletionHandler: (void (^) (UIImage *)) completionHandler;
+- (void) downloadImageFromUserSearch: (User *) user withCompletionHandler: (void (^) (UIImage *)) completionHandler;
 
 @end

@@ -111,12 +111,12 @@
     return self.questions.count;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-    if ([segue.identifier  isEqual: @"SHOW_SELECTED_QUESTION"]) {
-        QuestionDetailViewController *destination = (QuestionDetailViewController *) segue.destinationViewController;
-        destination.selectedQuestion = self.questions[indexPath.row];
-    }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[ NSBundle mainBundle]];
+    QuestionDetailViewController *newVC = [storyboard instantiateViewControllerWithIdentifier:@"QUESTION_DETAIL_VC"];
+    [self.navigationController pushViewController:newVC animated:YES];
+    newVC.selectedQuestion = self.questions[indexPath.row];
+    
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {

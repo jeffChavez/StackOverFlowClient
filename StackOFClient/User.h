@@ -10,6 +10,17 @@
 
 @interface User : NSObject
 
-@property NSString *name;
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *location;
+@property (nonatomic, strong) NSString *link;
+@property (nonatomic, assign) NSInteger bronzeBadgeCount;
+@property (nonatomic, assign) NSInteger silverBadgeCount;
+@property (nonatomic, assign) NSInteger goldBadgeCount;
+@property (nonatomic, strong) NSString *profileImageURLString;
+@property (nonatomic, strong) UIImage *profileImage;
+
+-(instancetype) initWithDictionary: (NSDictionary *) userDictionary;
+
+- (NSMutableArray *) parseJSONDataIntoUsers: (NSData *) data;
 
 @end

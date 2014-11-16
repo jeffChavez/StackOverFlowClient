@@ -15,10 +15,6 @@
 @property WebViewController *webViewController;
 @property WKWebView *webView;
 
-@property (nonatomic, strong) NSString *publicKey;
-@property (nonatomic, strong) NSString *oAuthDomain;
-@property (nonatomic, strong) NSString *clientID;
-@property (nonatomic, strong) NSString *oAuthURL;
 @property (nonatomic, strong) NSString *loginURL;
 
 @end
