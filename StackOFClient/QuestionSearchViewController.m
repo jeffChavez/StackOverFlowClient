@@ -27,6 +27,8 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.searchBar.delegate = self;
+    self.searchBar.barTintColor = self.tableView.backgroundColor;
+    self.searchBar.tintColor = [UIColor darkGrayColor];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"QuestionCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"QUESTION_CELL"];
     
