@@ -124,7 +124,25 @@
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [[NetworkController networkController] searchForQuestionsWithTag:searchBar.text withCompletionHandler:^(NSString *errorDescription, NSMutableArray *questions) {
+    NSString *url = @"https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow";
+    [[NetworkController networkController] searchForQuestionsWithTag:searchBar.text withURL: url withCompletionHandler:^(NSString *errorDescription, NSMutableArray *questions) {
+        if (!errorDescription) {
+            self.questions = questions;
+            [self.tableView reloadData];
+        }
+    }];
+}
+
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    NSString *url = [[NSString alloc] init];
+    if (searchBar.selectedScopeButtonIndex == 0) {
+        url = @"https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow";
+    } else if (searchBar.selectedScopeButtonIndex == 1) {
+        url = @"https://api.stackexchange.com/2.2/search?order=desc&sort=creation&site=stackoverflow";
+    } else if (searchBar.selectedScopeButtonIndex == 2) {
+        url = @"https://api.stackexchange.com/2.2/search?order=desc&sort=votes&site=stackoverflow";
+    }
+    [[NetworkController networkController] searchForQuestionsWithTag:searchBar.text withURL: url withCompletionHandler:^(NSString *errorDescription, NSMutableArray *questions) {
         if (!errorDescription) {
             self.questions = questions;
             [self.tableView reloadData];

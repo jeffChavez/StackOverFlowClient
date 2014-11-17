@@ -15,7 +15,7 @@
 
 + (id)networkController;
 
-- (void) searchForQuestionsWithTag: (NSString *) tag withCompletionHandler: (void (^)(NSString *, NSMutableArray *))completionHandler;
+- (void) searchForQuestionsWithTag: (NSString *) tag withURL: (NSString *) url withCompletionHandler: (void (^)(NSString *, NSMutableArray *))completionHandler;
 - (void) searchForUsersByName: (NSString *) name withCompletionHandler: (void (^)(NSString *, NSMutableArray*)) completionHandler;
 
 - (void) downloadImageFromQuestionSearch: (Question *) question withCompletionHandler: (void (^) (UIImage *)) completionHandler;
