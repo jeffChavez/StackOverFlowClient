@@ -31,6 +31,7 @@
 		6B7D940E1A132C740023E42D /* QuestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7D940D1A132C740023E42D /* QuestionCell.m */; };
 		6B7D94101A132CDE0023E42D /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B7D940F1A132CDE0023E42D /* QuestionCell.xib */; };
 		6B7D944B1A142FDC0023E42D /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 6B7D944A1A142FDC0023E42D /* sample.json */; };
+		6BE6F8811A19D4D5000DA611 /* SearchFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BE6F8801A19D4D5000DA611 /* SearchFilterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		6B7D940D1A132C740023E42D /* QuestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionCell.m; sourceTree = "<group>"; };
 		6B7D940F1A132CDE0023E42D /* QuestionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCell.xib; sourceTree = "<group>"; };
 		6B7D944A1A142FDC0023E42D /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = sample.json; path = ../StackOFClient/sample.json; sourceTree = "<group>"; };
+		6BE6F87F1A19D4D5000DA611 /* SearchFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchFilterViewController.h; sourceTree = "<group>"; };
+		6BE6F8801A19D4D5000DA611 /* SearchFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchFilterViewController.m; sourceTree = "<group>"; };
 		825F8C83FFADA1A5C7F7A61F /* libPods-StackOFClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackOFClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		977B1D3B3074740F56A546B1 /* Pods-StackOFClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOFClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOFClient/Pods-StackOFClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -190,6 +193,8 @@
 				6B7D93F51A118BED0023E42D /* QuestionSearchViewController.m */,
 				6B7D94061A12E6070023E42D /* QuestionDetailViewController.h */,
 				6B7D94071A12E6070023E42D /* QuestionDetailViewController.m */,
+				6BE6F87F1A19D4D5000DA611 /* SearchFilterViewController.h */,
+				6BE6F8801A19D4D5000DA611 /* SearchFilterViewController.m */,
 				6B6E530C1A1886F7008B3AEB /* UserSearchViewController.h */,
 				6B6E530D1A1886F7008B3AEB /* UserSearchViewController.m */,
 				6B6E53121A1890FF008B3AEB /* UserDetailViewController.h */,
@@ -385,6 +390,7 @@
 				6B7D94051A12CF730023E42D /* WebViewController.m in Sources */,
 				6B7D93F61A118BED0023E42D /* QuestionSearchViewController.m in Sources */,
 				6B7D93CE1A1187D00023E42D /* AppDelegate.m in Sources */,
+				6BE6F8811A19D4D5000DA611 /* SearchFilterViewController.m in Sources */,
 				6B7D93D11A1187D00023E42D /* StackOFClient.xcdatamodeld in Sources */,
 				6B7D940E1A132C740023E42D /* QuestionCell.m in Sources */,
 				6B6E53141A1890FF008B3AEB /* UserDetailViewController.m in Sources */,

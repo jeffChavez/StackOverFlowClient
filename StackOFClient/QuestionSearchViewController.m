@@ -26,16 +26,13 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.tableView registerNib:[UINib nibWithNibName:@"QuestionCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"QUESTION_CELL"];
+    
     self.searchBar.delegate = self;
     self.searchBar.barTintColor = self.tableView.backgroundColor;
     self.searchBar.tintColor = [UIColor darkGrayColor];
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"QuestionCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"QUESTION_CELL"];
-    
     self.dateFormatter = [[NSDateFormatter alloc]init];
-    [self.dateFormatter setDateStyle:NSDateFormatterShortStyle];
-    [self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-    [self.dateFormatter setDateFormat:@"dd-MM-yy 'at' hh:mm a"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -133,6 +130,7 @@
             [self.tableView reloadData];
         }
     }];
+    [searchBar performSelector:@selector(resignFirstResponder) withObject:nil afterDelay:0.1];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
@@ -151,5 +149,20 @@
         }
     }];
 }
+//
+//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    UITouch *touch = [[event allTouches] anyObject];
+//    if ([self.searchBar isFirstResponder] && [touch view] != self.searchBar)
+//    {
+//        [self.searchBar resignFirstResponder];
+//    }
+//    [super touchesBegan:touches withEvent:event];
+//}
+//
+//- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+//    [textField resignFirstResponder];
+//    return YES;
+//}
 
 @end
