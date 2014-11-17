@@ -12,10 +12,12 @@
 #import "QuestionDetailViewController.h"
 #import "QuestionCell.h"
 #import <NSString+HTML.h>
+#import "SearchFilterViewController.h"
 
 @interface QuestionSearchViewController ()
 
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) UIBarButtonItem *searchFilterButton;
 
 @end
 
@@ -33,6 +35,9 @@
     self.searchBar.tintColor = [UIColor darkGrayColor];
     
     self.dateFormatter = [[NSDateFormatter alloc]init];
+    
+    self.searchFilterButton = [[UIBarButtonItem alloc] initWithTitle:@"Filter" style:UIBarButtonItemStyleDone target:self action:@selector(showSearchFilter:)];
+    self.navigationItem.rightBarButtonItem = self.searchFilterButton;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -149,20 +154,12 @@
         }
     }];
 }
-//
-//-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-//{
-//    UITouch *touch = [[event allTouches] anyObject];
-//    if ([self.searchBar isFirstResponder] && [touch view] != self.searchBar)
-//    {
-//        [self.searchBar resignFirstResponder];
-//    }
-//    [super touchesBegan:touches withEvent:event];
-//}
-//
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-//    [textField resignFirstResponder];
-//    return YES;
-//}
+
+- (void) showSearchFilter: (id) sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SearchFilterViewController *searchFilterViewController = [storyboard instantiateViewControllerWithIdentifier:@"SEARCH_FILTER_VC"];
+//    [self.navigationController pushViewController:searchFilterViewController animated:true];
+    [self.navigationController presentViewController:searchFilterViewController animated:YES completion:nil];
+}
 
 @end

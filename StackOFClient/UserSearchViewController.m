@@ -72,13 +72,4 @@
     [searchBar performSelector:@selector(resignFirstResponder) withObject:nil afterDelay:0.1];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return YES;
-}
-
 @end
