@@ -134,31 +134,20 @@
 }
 
 - (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope {
+    NSString *url = [[NSString alloc] init];
     if (searchBar.selectedScopeButtonIndex == 0) {
-        NSString *url = @"https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow";
-        [[NetworkController networkController] searchForQuestionsWithTag:searchBar.text withURL: url withCompletionHandler:^(NSString *errorDescription, NSMutableArray *questions) {
-            if (!errorDescription) {
-                self.questions = questions;
-                [self.tableView reloadData];
-            }
-        }];
+        url = @"https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow";
     } else if (searchBar.selectedScopeButtonIndex == 1) {
-        NSString *url = @"https://api.stackexchange.com/2.2/search?order=desc&sort=creation&site=stackoverflow";
-        [[NetworkController networkController] searchForQuestionsWithTag:searchBar.text withURL: url withCompletionHandler:^(NSString *errorDescription, NSMutableArray *questions) {
-            if (!errorDescription) {
-                self.questions = questions;
-                [self.tableView reloadData];
-            }
-        }];
+        url = @"https://api.stackexchange.com/2.2/search?order=desc&sort=creation&site=stackoverflow";
     } else if (searchBar.selectedScopeButtonIndex == 2) {
-        NSString *url = @"https://api.stackexchange.com/2.2/search?order=desc&sort=votes&site=stackoverflow";
-        [[NetworkController networkController] searchForQuestionsWithTag:searchBar.text withURL: url withCompletionHandler:^(NSString *errorDescription, NSMutableArray *questions) {
-            if (!errorDescription) {
-                self.questions = questions;
-                [self.tableView reloadData];
-            }
-        }];
+        url = @"https://api.stackexchange.com/2.2/search?order=desc&sort=votes&site=stackoverflow";
     }
+    [[NetworkController networkController] searchForQuestionsWithTag:searchBar.text withURL: url withCompletionHandler:^(NSString *errorDescription, NSMutableArray *questions) {
+        if (!errorDescription) {
+            self.questions = questions;
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 @end
