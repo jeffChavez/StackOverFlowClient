@@ -27,7 +27,6 @@
     self.headerView.backgroundColor = self.tableView.backgroundColor;
     self.saveButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(willSave:)];
     self.navigationItem.rightBarButtonItem = self.saveButton;
-    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

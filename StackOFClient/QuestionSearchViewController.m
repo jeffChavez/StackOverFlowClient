@@ -159,7 +159,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     SearchFilterViewController *searchFilterViewController = [storyboard instantiateViewControllerWithIdentifier:@"SEARCH_FILTER_VC"];
 //    [self.navigationController pushViewController:searchFilterViewController animated:true];
-    [self.navigationController presentViewController:searchFilterViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:searchFilterViewController animated:YES];
 }
 
 @end
