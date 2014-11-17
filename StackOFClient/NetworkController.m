@@ -32,11 +32,11 @@
     return networkController;
 }
 
-- (void) searchForQuestionsWithTag: (NSString *) tag withCompletionHandler: (void (^)(NSString *, NSMutableArray *))completionHandler; {
+- (void) searchForQuestionsWithTag: (NSString *) tag withURL: (NSString *) url withCompletionHandler: (void (^)(NSString *, NSMutableArray *))completionHandler; {
     NSString *requestURLString;
     if ([[[NSUserDefaults standardUserDefaults] valueForKey:@"OAuthToken"] isKindOfClass:[NSString class]]) {
         NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"OAuthToken"];
-        requestURLString = [NSString stringWithFormat: @"https://api.stackexchange.com/2.2/search?order=desc&sort=activity&tagged=%@&site=stackoverflow&access_token=%@&key=%@", tag, token, publicKey];
+        requestURLString = [NSString stringWithFormat: @"%@&tagged=%@&access_token=%@&key=%@", url, tag, token, publicKey];
     } else {
         requestURLString = [NSString stringWithFormat:@"https://api.stackexchange.com/2.2/search?order=desc&sort=activity&tagged=%@&site=stackoverflow", tag];
     }
